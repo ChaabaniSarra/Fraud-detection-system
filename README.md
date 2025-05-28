@@ -1,7 +1,3 @@
-For your **fraud detection project using ETL and a graph database**, a well-structured `README.md` should provide a clear overview, instructions, and context. Here's a suggested outline with content tailored to your project:
-
----
-
 ## 📌 Project Title
 
 **Insurance Fraud Detection System Using ETL and Graph Database**
@@ -87,18 +83,3 @@ README.md            → Project documentation
 * 🧠 Sprint 3: Add machine learning for anomaly detection
 * 🌐 Sprint 4: Build a front-end interface for data exploration
 
----
-
-## 🤝 Contributing
-
-Feel free to fork the repo, open issues, or submit pull requests.
-
----
-
-## 📄 License
-
-MIT License *(or specify your own)*
-
----
-
-Do you want this generated as a Markdown file? Or tailored for GitHub with badges and visuals?
