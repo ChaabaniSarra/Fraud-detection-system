@@ -42,17 +42,12 @@ This project aims to detect potential insurance fraud by integrating data from v
 ### Installation
 
 1. Clone the repository
+2. 
+3. Set up Neo4j and create a database
 
-   ```bash
-   git clone https://github.com/yourusername/fraud-detection-graph.git
-   cd fraud-detection-graph
-   ```
+4. Open the ETL tool and load the provided transformation job
 
-2. Set up Neo4j and create a database
-
-3. Open the ETL tool and load the provided transformation job
-
-4. Run the ETL job to extract, clean, and load data into Neo4j
+5. Run the ETL job to extract, clean, and load data into Neo4j
 
 ---
 
