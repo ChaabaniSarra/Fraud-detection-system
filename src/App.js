@@ -1,15 +1,17 @@
-
+// src/App.js
 import React from 'react';
-import GraphView from './GraphView';
+import GraphController from './controller/GraphController';
 
 function App() {
   return (
     <div>
       <h2>Visualisation des données Neo4j</h2>
-      <GraphView />
+      <GraphController />
     </div>
   );
 }
 
 export default App;
+
+
 
