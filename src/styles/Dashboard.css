@@ -1,0 +1,222 @@
+/* --------------------------------------------
+   GLOBAL RESET & BASE STYLES
+--------------------------------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(to bottom right, #f5f8fc, #e9eff6);
+  /* background-color: #C2D9E3; */
+  color: #2c3e50;
+  overflow-x: hidden;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+/* --------------------------------------------
+   TYPOGRAPHY
+--------------------------------------------- */
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin: 40px 0 25px;
+  color: #102a43;
+  font-weight: 600;
+}
+
+/* --------------------------------------------
+   DASHBOARD LAYOUT
+--------------------------------------------- */
+.dashboard-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 30px;
+  justify-content: center;
+}
+
+/* --------------------------------------------
+   SIDEBAR / FILTERS
+--------------------------------------------- */
+.sidebar {
+  flex: 1;
+  min-width: 280px;
+  max-width: 340px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.sidebar:hover {
+  transform: translateY(-2px);
+}
+
+.sidebar h3 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  color: #1f3a60;
+  border-left: 4px solid #5b9bd5;
+  padding-left: 12px;
+}
+
+/* Filter inputs */
+.sidebar label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #555;
+}
+
+.sidebar input,
+.sidebar select {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 18px;
+  border: 1px solid #ccd6dd;
+  border-radius: 10px;
+  background-color: #fdfdfd;
+  transition: all 0.3s ease;
+}
+
+.sidebar input:focus,
+.sidebar select:focus {
+  outline: none;
+  border-color: #5b9bd5;
+  box-shadow: 0 0 8px rgba(91, 155, 213, 0.3);
+}
+
+/* Range slider */
+.sidebar input[type="range"] {
+  margin-top: 4px;
+}
+
+.score-value {
+  font-weight: bold;
+  text-align: right;
+  color: #34495e;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
+/* Fraud Summary */
+.summary {
+  margin-top: 40px;
+}
+
+.summary h4 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #5b9bd5;
+  color: #1a2b4c;
+}
+
+/* --------------------------------------------
+   MAIN CONTENT / GRAPH
+--------------------------------------------- */
+.main-content {
+  flex: 3;
+  min-width: 400px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.main-content:hover {
+  transform: translateY(-2px);
+}
+
+.main-content h3 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  color: #1f3a60;
+  border-left: 4px solid #5b9bd5;
+  padding-left: 12px;
+}
+
+/* Graph Container */
+.graph-container {
+  width: 100%;
+  height: 800px;
+  overflow: auto;
+  border-radius: 12px;
+  background: #fefefe;
+  border: 1px solid #e2e8f0;
+}
+
+/* --------------------------------------------
+   NODE DETAILS
+--------------------------------------------- */
+.node-details {
+  background-color: #f9fbfc;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 30px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  font-size: 0.95rem;
+  color: #2e3d49;
+  max-height: 300px;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+}
+
+.node-details:hover {
+  transform: translateY(-2px);
+}
+
+.node-details h4 {
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  padding-left: 12px;
+  border-left: 4px solid #5b9bd5; /* Blue vertical bar */
+  color: #1f3a60;
+  font-weight: 600;
+}
+
+.node-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.node-details li {
+  margin-bottom: 6px;
+  padding-left: 12px;
+  position: relative;
+  color: #4a4a4a;
+}
+
+.node-details li::before {
+  content: '•';
+  color: #5b9bd5;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+/* --------------------------------------------
+   RESPONSIVE DESIGN
+--------------------------------------------- */
+@media screen and (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sidebar,
+  .main-content {
+    width: 100%;
+    max-width: 95%;
+  }
+
+  .graph-container {
+    height: 400px;
+  }
+}
