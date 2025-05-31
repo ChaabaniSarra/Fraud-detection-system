@@ -1,14 +1,14 @@
-// src/model/GraphModel.js
 import neo4j from 'neo4j-driver';
 
-const uri = "neo4j://20.47.81.26:7687";
-const user = "neo4j";
-const password = "Unfrauded*sarra*2025";
+const driver = neo4j.driver(
+  "neo4j://20.47.81.26:7687",
+  neo4j.auth.basic('neo4j', 'Unfrauded*sarra*2025')
+);
 
-export async function fetchGraphData() {
-  const driver = neo4j.driver(uri, neo4j.auth.basic(user, password));
+export async function fetchGraphData(filters = {}) {
   const session = driver.session();
 
+  // Add filters to query if needed (simple example without filters)
   const result = await session.run('MATCH (a)-[r]->(b) RETURN a, r, b');
 
   const nodes = {};
@@ -25,12 +25,16 @@ export async function fetchGraphData() {
     links.push({
       source: a.identity.toInt(),
       target: b.identity.toInt(),
-      label: r.type
+      label: r.type,
+      color: r.type === "FRAUD" ? "red" : "gray"
     });
   });
 
   await session.close();
-  await driver.close();
 
   return { nodes: Object.values(nodes), links };
+}
+
+export async function closeDriver() {
+  await driver.close();
 }
